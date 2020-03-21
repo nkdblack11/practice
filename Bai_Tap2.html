@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script language="JavaScript">
+    function kiem_tra_snd(number) {
+        let n = parseInt(number)
+        if (n > 0) {
+            return n;
+        }else if (n < 0){
+            return false;
+        }
+    }
+
+    function tinh_tong_snd(arr) {
+        let total = 0
+        for (let i = 0; i < arr.length; i++) {
+            let kq = kiem_tra_snd(arr[i])
+            console.log(kq)
+            if (kq) {
+                total += kq
+            }
+        }
+        return total
+    }
+
+    let a = [-2, 1, 9, 5, 27, 7, -24]
+    let c = tinh_tong_snd(a)
+    alert('Tổng các số nguyên dương trong mảng là: ' + c)
+</script>
+</body>
+</html>
