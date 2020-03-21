@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    function kiem_tra_snt(number) {
+        let n = parseInt(number)
+        if (n < 2) {
+            return false;
+        } else if (n === 2) {
+            return n;
+        }
+        for (let i = 2; i < n; i++) {
+            if ((n % i) === 0) {
+                return false;
+            }
+        }
+        return n;
+    }
+
+    function Tinh_tong_snt(arr) {
+        let total = 0
+        for (let i = 0; i < arr.length; i++) {
+            let kq = kiem_tra_snt(arr[i])
+            console.log(kq)
+            if (kq) {
+                total += kq
+            }
+        }
+        return total
+    }
+
+    let a = [2, 4, 3, 15, 21, 17, 24]
+    let c = Tinh_tong_snt(a)
+    alert('Tổng các số nguyên tố trong mảng là: ' + c)
+</script>
+</body>
+</html>
